@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<extension version="2.5" type="plugin" group="vmpayment">
+
+    <name>CloudKassir</name>
+    <creationDate>April 2018</creationDate>
+    <author>CloudKassir</author>
+    <authorUrl>http://cloudpayments.ru/</authorUrl>
+    <copyright>cloudpayments.ru</copyright>
+    <license></license>
+    <version>0.1.2</version>
+    <description><![CDATA[<a href="https://cloudpayments.ru/" target="_blank">CloudKassir</a>]]></description>
+
+    <files>
+        <filename plugin="cloudkassir">cloudkassir.php</filename>
+        <filename plugin="cloudkassir">readme.md</filename>
+    </files>
+    <files folder="administrator/components/com_virtuemart/fields">
+        <filename>paymentmethods.php</filename>
+    </files>
+
+    <vmconfig>
+        <fields name="params">
+            <fieldset name="basic" addfieldpath="/administrator/components/com_virtuemart/fields">
+                <field type="text" name="public_id"  size="50" label="Public ID" default="" description="" />
+
+                <field type="text" name="api_password"  size="50" label="Пароль для API" default="" description="" />
+
+                <field type="text" name="inn" scope="com_virtuemart" default="" label="ИНН" />
+
+                <field type="list" name="tax_system" label="Система налогообложения"
+                       default="0" description="" >
+                    <option value="0">0 — Общая система налогообложения</option>
+                    <option value="1">1 — Упрощенная система налогообложения (Доход)</option>
+                    <option value="2">2 — Упрощенная система налогообложения (Доход минус Расход)</option>
+                    <option value="3">3 — Единый налог на вмененный доход</option>
+                    <option value="4">4 — Единый сельскохозяйственный налог</option>
+                    <option value="5">5 — Патентная система налогообложения</option>
+                </field>
+
+                <field name="status_success" type="vmorderstate" scope="com_virtuemart" default="C" label="Статус успешно оплаченного заказа, когда нужно отправить чек" description="Заказ Оплачен" />
+
+                <field name="payment_methods" type="paymentmethods" multiple="true" size="10" scope="com_virtuemart" default="cloudpayments" label="Методы оплаты, для которых необходимо отправлять чек прихода" />
+            </fieldset>
+        </fields>
+    </vmconfig>
+
+</extension>
