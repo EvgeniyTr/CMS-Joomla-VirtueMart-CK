@@ -4,7 +4,9 @@
 
 ### Совместимость:
 * Joomla v.3.x;
-* VirtueMart v.3.x; 
+* VirtueMart v.3.x.
+
+_Если вы используете платежный модуль CloudPayments совместно с модулем CloudKassir, то убедитесь, что в платежном модуле отключена отправка чеков через онлайн-кассу, во избежание дублирования кассовых чеков._  
 
 Модуль тестировался на VirtueMart = 3.2.12 (Joomla >= 3.8.4)
 
@@ -37,14 +39,13 @@
 
 
 ### Настройка вебхуков
-Для корректной настройки вебхуков откройте ссылку по адресу
-http://yoursite.ru/index.php?option=com_virtuemart&view=pluginresponse&task=pluginresponsereceived&cloudpayments_receipt
+Для корректной настройки вебхуков откройте ссылку по адресу  
+`http://yoursite.ru/index.php?option=com_virtuemart&view=pluginresponse&task=pluginresponsereceived&cloudpayments_receipt`
 
-В некоторых случаях, в частности использовании нескольких языков для посетителей сайта, ссылка может видоизмениться. Например так.
-http://yoursite.ru/ru/?option=com_virtuemart&view=pluginresponse&task=pluginresponsereceived&cloudpayments_receipt
+В некоторых случаях, в частности использовании нескольких языков для посетителей сайта, ссылка может видоизмениться. Например так.  
+`http://yoursite.ru/ru/?option=com_virtuemart&view=pluginresponse&task=pluginresponsereceived&cloudpayments_receipt`
 
 Данную ссылку и необходимо будет указывать в вебхуках.
 
-* (уведомлений о кассовых чеках) index.php?option=com_virtuemart&view=pluginresponse&task=pluginresponsereceived&cloudpayments_receipt
-
- 
+* (уведомлений о кассовых чеках)  
+`index.php?option=com_virtuemart&view=pluginresponse&task=pluginresponsereceived&cloudpayments_receipt`
